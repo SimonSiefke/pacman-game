@@ -1,29 +1,10 @@
-# client-with-router
+# Pacman Game
 
-## Project setup
-```
-npm install
-```
+## Quickstart 🚀
 
-### Compiles and hot-reloads for development
 ```
-npm run serve
+git clone https://github.com/SimonSiefke/pacman-game &&
+cd pacman-game &&
+npm install &&
+npm run dev
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
