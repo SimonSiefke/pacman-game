@@ -55,7 +55,7 @@
       >
       <img
         class="whatever-1"
-        src="@/assets/due.svg"
+        src="@/assets/background-whatever-1.svg"
       >
       <img
         class="tower"
@@ -67,11 +67,11 @@
       >
       <img
         class="building-3"
-        src="@/assets/background-building-3.png"
+        src="@/assets/background-building-3.svg"
       >
       <img
         class="building-4"
-        src="@/assets/background-building-4.png"
+        src="@/assets/background-building-4.svg"
       >
       <img
         class="building-6"
