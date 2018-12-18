@@ -1,6 +1,6 @@
 {
-  "name": "pacman-client",
-  "short_name": "pacman-client",
+  "name": "pacman",
+  "short_name": "pacman",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",
