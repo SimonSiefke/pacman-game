@@ -55,7 +55,7 @@
       >
       <img
         class="whatever-1"
-        src="@/assets/background-whatever-1.png"
+        src="@/assets/due.svg"
       >
       <img
         class="tower"
