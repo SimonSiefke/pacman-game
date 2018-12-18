@@ -1,0 +1,172 @@
+$base = (100 / 39) vmin
+
+body
+  margin 0
+
+.game
+  display grid
+  grid-template-columns repeat(39, $base)
+  grid-template-rows repeat(38, $base)
+  height 38 * $base
+  margin 0 auto
+  position relative
+  width 39 * $base
+
+.stats
+  display grid
+  font-size $base * 0.9
+  grid-template-columns repeat(3, 1fr)
+  height $base
+  justify-items center
+  overflow hidden
+
+[class^=cell]:not(.cell-1)
+  background #ED1F04
+
+.cell-1
+  visibility hidden
+  z-index -1
+
+.cell-2::after, .cell-3::after, .cell-4::after, .cell-5::after
+  background-size cover
+  content ''
+  display block
+  height $base
+  width $base
+
+.cell-2::after
+  background-image url('../assets/figure-snowman.png')
+
+.cell-3::after
+  background-image url('../assets/figure-star.png')
+
+.cell-4::after
+  background-image url('../assets/figure-tree.png')
+
+.cell-5::after
+  background-image url('../assets/figure-man.png')
+  margin-left $base * 0.2
+  width $base * 0.7
+
+.pac
+  height $base
+  left $base * 0
+  top $base * 6
+  width $base
+  z-index 1
+
+.pac, .ghost, img
+  position absolute
+
+.stats > div
+  display grid
+  grid-column-gap $base * 0.4
+  grid-template-columns repeat(3, auto)
+
+.stats .pac
+  left 0
+  position relative
+  top 0
+
+.ghost
+  z-index 2
+
+  &.blinky
+    color #962d09
+    left $base * 26
+    top $base * 17
+
+  &.pinky
+    color #FFB7FF
+    left $base * 23
+    top $base * 17
+
+  &.inky
+    color #17FFFF
+    left $base * 17
+    top $base * 15
+
+  &.clyde
+    color #FFB752
+    left $base * 11
+    top $base * 11
+
+img
+  pointer-events none
+  user-select none
+  z-index -1
+
+.church-1
+  height $base * 8
+  left $base * 27
+  top $base * 10
+
+.church-2
+  height $base * 6.5
+  left $base * 16.6
+  top $base * 11.3
+
+.building-1
+  height $base * 8.4
+  left $base * 27
+  top $base * 18
+
+.building-2
+  height $base * 3.5
+  left $base * 17
+  top $base * 18
+
+.building-3
+  height $base * 3
+  left $base * 2
+  top $base * 7
+
+.building-4
+  height $base * 4
+  left $base * 31
+  top $base * 23.7
+
+.building-5
+  height $base * 7
+  left $base * 15.5
+  top $base * 29
+
+.building-6
+  height $base * 7
+  left $base * 2
+  top $base * 12
+
+.whatever-1
+  height $base * 3
+  left $base * 33
+  top $base * 14
+
+.tower
+  height $base * 5.8
+  left $base * 23
+  top $base * -0.8
+
+.balls
+  height $base * 5
+  left $base * 1.3
+  top $base * 28.2
+
+.start-message, .restart-message
+  align-items center
+  background rgba(green, 0.8)
+  display grid
+  font-family Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+  font-size $base * 1.3
+  font-weight bold
+  height $base * 4
+  justify-items center
+  left $base * 17
+  line-height $base * 0.7
+  position absolute
+  top $base * 18
+  user-select none
+  width $base * 9
+
+kbd
+  color white
+  font-family inherit

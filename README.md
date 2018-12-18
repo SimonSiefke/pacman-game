@@ -1,4 +1,4 @@
-# pacman-client
+# client-with-router
 
 ## Project setup
 ```
