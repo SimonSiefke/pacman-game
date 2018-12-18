@@ -22,6 +22,22 @@
       "dest": "/img/$1"
     },
     {
+      "src": "^/manifest.json",
+      "dest": "/manifest.json"
+    },
+    {
+      "src": "^/robots.txt",
+      "dest": "/robots.txt"
+    },
+    {
+      "src": "^/service-worker.js",
+      "dest": "/service-worker.js"
+    },
+    {
+      "src": "^/precache-manifest(.*)",
+      "dest": "/precache-manifest$1"
+    },
+    {
       "src": ".*",
       "dest": "/index.html"
     }
