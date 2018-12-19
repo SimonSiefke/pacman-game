@@ -1,5 +1,7 @@
 # Pacman Game
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/SimonSiefke/pacman-game.svg)](https://greenkeeper.io/)
+
 ## Quickstart 🚀
 
 ```
