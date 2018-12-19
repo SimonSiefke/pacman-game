@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div class="game">
+    <div v-touch:swipe.left="onSwipeLeft" v-touch:swipe.right="onSwipeRight" v-touch:swipe.top="onSwipeUp"
+    v-touch:swipe.bottom="onSwipeDown"  class="game">
       <div
         v-for="(cell, index) in board.flatMap(x => x)"
         :key="index"
@@ -40,8 +41,9 @@
       <div
         v-show="isFirstPlay"
         class="start-message"
+        @click="startMobile"
       >
-        <span>Press <kbd>Space</kbd> </span>
+        <span>Press <kbd v-if="!isMobile" class="highlight">Space</kbd><span v-else class="highlight">Here</span> </span>
         <span>to start</span>
       </div>
 
@@ -116,6 +118,7 @@ import { board } from "./board.json";
 import Ghost from "./Ghost.vue";
 import Pac from "./Pac.vue";
 import shuffle from "fisher-yates/inplace";
+import isMobile from "@/util/isMobile";
 
 const base = 100 / 39;
 const unit = "vmin";
@@ -172,7 +175,8 @@ export default {
       pinky: pinkyInitial(),
       clyde: clydeInitial(),
       isFirstPlay: true,
-      score: 0
+      score: 0,
+      isMobile: isMobile()
     };
   },
   computed: {
@@ -277,9 +281,35 @@ export default {
     clearInterval(this.interval);
   },
   methods: {
+    onSwipeLeft() {
+      if (!this.stopped) {
+        this.setNextPacDirection("left");
+      }
+    },
+    onSwipeRight() {
+      if (!this.stopped) {
+        this.setNextPacDirection("right");
+      }
+    },
+    onSwipeUp() {
+      if (!this.stopped) {
+        this.setNextPacDirection("up");
+      }
+    },
+    onSwipeDown() {
+      if (!this.stopped) {
+        this.setNextPacDirection("down");
+      }
+    },
     startFirstPlay(event) {
       const SPACE_KEY = 32;
       if (event.keyCode === SPACE_KEY) {
+        this.stopped = false;
+        this.isFirstPlay = false;
+      }
+    },
+    startMobile() {
+      if (this.isMobile) {
         this.stopped = false;
         this.isFirstPlay = false;
       }

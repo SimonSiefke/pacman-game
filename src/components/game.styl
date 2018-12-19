@@ -2,6 +2,7 @@ $base = (100 / 39) vmin
 
 body
   margin 0
+  overscroll-behavior contain // disable pull to refresh on android
 
 .game
   display grid
@@ -171,6 +172,6 @@ img
   user-select none
   width $base * 9.05
 
-kbd
+.highlight
   color white
   font-family inherit
